@@ -169,6 +169,7 @@ function processInput(input) {
 function getUserInput() {
   rl.question("\x1b[0m\nScan Scout: ", (input) => {
     if (input.toLowerCase() === "exit") {
+      
       rl.close();
       db.close();
       console.log("\x1b[96mClosed");
