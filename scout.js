@@ -28,29 +28,29 @@ async function processInput(input) {
     INFO: {
       matchNum: dataArray[0],
       teamNum: dataArray[1],
-      scoutName: dataArray[2],
+      scoutName: dataArray[23],
     },
     AUTON: {
-      startingPos: dataArray[3],
-      leaveWing: dataArray[4],
-      spkrMade_atn: dataArray[5],
-      spkrMissed_atn: dataArray[6],
-      ampMade_atn: dataArray[7],
-      ampMissed_atn: dataArray[8],
+      startingPos: dataArray[2],
+      leaveWing: dataArray[3],
+      spkrMade_atn: dataArray[4],
+      spkrMissed_atn: dataArray[5],
+      ampMade_atn: dataArray[6],
+      ampMissed_atn: dataArray[7],
     },
     TP: {
-      spkrMade_tp: dataArray[9],
-      spkrMissed_tp: dataArray[10],
-      ampMade_tp: dataArray[11],
-      ampMissed_tp: dataArray[12],
-      coopertition: dataArray[13], 
-      climbLvl: dataArray[14], 
-      trap: dataArray[15], 
+      spkrMade_tp: dataArray[8],
+      spkrMissed_tp: dataArray[9],
+      ampMade_tp: dataArray[10],
+      ampMissed_tp: dataArray[11],
+      coopertition: dataArray[12],  
     },
     ENDGAME: {
-      noShow: dataArray[16],
-      defQuant: dataArray[17],
-      defQual: dataArray[18],
+      climbLvl: dataArray[13], 
+      trap: dataArray[14], 
+      traverseChain:dataArray[17],
+      twoRobots:dataArray[18], 
+      droppedWhenHit:dataArray[21]
     },
   };
 
@@ -72,15 +72,17 @@ async function processInput(input) {
       "ampMade_tp INTEGER, " +
       "ampMissed_tp INTEGER, " +
       "coopertition Boolean, " +
-      "climbLvl INTEGER, " +
-      "trap INTEGER, " +
-      "noShow Boolean, " +
-      "defQuant INTEGER, " +
-      "defQual INTEGER)"
+      "climbLvl TEXT, " +
+      "trap INTEGER, " + 
+      "traverse TEXT, " +  // Added comma here
+      "twoRobot Boolean, " +  // Corrected the spelling of "Boolean"
+      "droppedHit Boolean" +
+    ");"
     );
+    
 
     const prep = db.prepare(
-      "INSERT INTO mytable VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)"
+      "INSERT INTO mytable VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
     );
 
     await prep.run(
@@ -100,12 +102,12 @@ async function processInput(input) {
       team.TP.ampMade_tp,
       team.TP.ampMissed_tp,
       team.TP.coopertition,
-      team.TP.climbLvl,
-      team.TP.trap,
 
-      team.ENDGAME.noShow, 
-      team.ENDGAME.defQuant,
-      team.ENDGAME.defQual
+      team.ENDGAME.climbLvl,
+      team.ENDGAME.trap,
+      team.ENDGAME.traverseChain, 
+      team.ENDGAME.twoRobots, 
+      team.ENDGAME.droppedWhenHit
     );
 
     prep.finalize();
