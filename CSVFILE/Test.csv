@@ -1,0 +1,6 @@
+id,matchNum,teamNum,scoutName,startingPos,leaveWing,spkrMade_atn,spkrMissed_atn,ampMade_atn,ampMissed_atn,spkrMade_tp,spkrMissed_tp,ampMade_tp,ampMissed_tp,coopertition,climbLvl,trap,noShow,defQuant,defQual
+1,20,2590,Fazal,B,1,1,4,5,4,5,6,3,5,0,Mic,3,Yes,0,0
+2,11,1058,,C,1,2,0,0,0,3,2,6,0,1,Climb,0,No,0,0
+3,11,1058,,C,-1,2,0,0,0,3,3,6,0,0,Climb,0,,,
+4,11,1058,,C,1,2,0,0,0,3,2,4,0,-1,Climb,0,No,0,0
+5,11,1058,,C,1,2,0,0,0,3,2,4,0,-1,Climb,0,No,0,0

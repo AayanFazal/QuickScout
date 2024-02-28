@@ -51,7 +51,12 @@ function convertToCSV(dbPath, databaseName) {
       db.close();
       return;
     }
-
+    if (rows.length === 0) {
+      console.log("No rows found in the table.");
+      db.close();
+      rl.close();
+      return;
+    }
     // Create a CSV header using the column names
     const header = Object.keys(rows[0]).join(',');
 
