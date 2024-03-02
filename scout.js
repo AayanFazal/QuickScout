@@ -62,7 +62,7 @@ async function processInput(input) {
       "teamNum INTEGER, " +
       "scoutName TEXT, " +
       "startingPos TEXT, " +
-      "leaveWing Boolean, " +
+      "leaveWing BOOLEAN, " +
       "spkrMade_atn INTEGER, " +
       "spkrMissed_atn INTEGER, " +
       "ampMade_atn INTEGER, " +
@@ -71,12 +71,12 @@ async function processInput(input) {
       "spkrMissed_tp INTEGER, " +
       "ampMade_tp INTEGER, " +
       "ampMissed_tp INTEGER, " +
-      "coopertition Boolean, " +
+      "coopertition BOOLEAN, " +
       "climbLvl TEXT, " +
       "trap INTEGER, " + 
       "traverse TEXT, " +  // Added comma here
-      "twoRobot Boolean, " +  // Corrected the spelling of "Boolean"
-      "droppedHit Boolean" +
+      "twoRobot BOOLEAN, " +  // Corrected the spelling of "Boolean"
+      "droppedHit BOOLEAN" +
     ");"
     );
     
